@@ -13,11 +13,14 @@ print fdisk
 
 ### Solicitamos el dispositivo a reparar ###
 
-# dispositivo = raw_input ("introdusca el dispositivo a reparar")
+dispositivo = raw_input ("introdusca el dispositivo a reparar.(sda, sdc, omita el /dev/)")
 
-# dev = dispositivo
+dev = dispositivo
 
-repararhd = os.system("sudo badblocks -v -n -f /dev/sdb")
 
-list = (repararhd, dev)
-print(repararhd)
+### Declaramos el comando a utilizar
+
+repararhd = os.system("sudo badblocks -v -n -f /dev/" + dev)
+
+print repararhd
+
